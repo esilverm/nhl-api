@@ -21,6 +21,5 @@
   },
   "homepage": "https://github.com/esilverm/node-nhl-api#readme",
   "dependencies": {
-    "request": "^2.83.0"
   }
 }
