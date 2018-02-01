@@ -10,7 +10,7 @@ var get = function(url, callback) {
     const lib = url.startsWith('https') ? require('https'): require('http')
     const request = lib.get(url, res => {
       if (res.statusCode < 200 || res.statusCode > 299) {
-        reject(new Error('Request failed with error code: ' + response.statusCode))
+        reject(new Error('Request failed with error code: ' + res.statusCode))
       }
       const body = []
       res.on('data', d => {
