@@ -6,13 +6,15 @@ module.exports = {
   /**
    * Method to list current nhl team data
    *
+   * @param {string} id - Team ID (OPTIONAL)
+   * @param {string} season - season (OPTIONAL)
    * @return {promise} all current NHL teams
    */
-   getTeams: function() {
-     var url = 'https://statsapi.web.nhl.com/api/v1/teams'
+   get: function(id) {
+     var url = `https://statsapi.web.nhl.com/api/v1/teams${id ? "/" + id : ""}`
      return new Promise((resolve, reject) => {
        fetch(url).then((res) => {
-         resolve(res.teams);
+         resolve(id ? res.teams[0] : res.teams);
        }).catch((error) => {
          reject(error)
        })
@@ -25,7 +27,7 @@ module.exports = {
     * @param {string} season - season
     * @return {promise} teams from given season
     */
-   getTeamsFromSeason: function(season) {
+   fromSeason: function(season) {
      const url = `https://statsapi.web.nhl.com/api/v1/teams?season=${season}`
      return new Promise((resolve, reject) => {
        if (!helpers.isValidSeasonFormat(season)) {
@@ -33,23 +35,6 @@ module.exports = {
        }
        fetch(url).then((res) => {
          resolve(res.teams)
-       }).catch((error) => {
-         reject(error)
-       })
-     })
-   },
-
-   /**
-    * Method to list all NHL team data from season
-    *
-    * @param {string} id - team id
-    * @return {promise} team data
-    */
-   getTeamFromID: function(id) {
-     const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}`
-     return new Promise((resolve, reject) => {
-       fetch(url).then((res) => {
-         resolve(res.teams[0])
        }).catch((error) => {
          reject(error)
        })
@@ -84,19 +69,38 @@ module.exports = {
     * @param {string} season - season (OPTIONAL)
     * @return {promise} team roster
     */
-   getTeamStatsFromID: function(id, season) {
+   getStatsFromID: function(id, season) {
      const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}/stats${season ? "?season=" + season : ""}`
      return new Promise((resolve, reject) => {
        if (season && !helpers.isValidSeasonFormat(season)) {
          reject("Invalid Season Format")
        }
        fetch(url).then((res) => {
-         resolve(res.stats)
+         resolve(res.stats[0].splits)
        }).catch((error) => {
          reject(error)
        })
      })
    },
 
-   
+   /**
+    * Method to list all stat rankings by a team for a specific season
+    *
+    * @param {string} id - team id
+    * @param {string} season - season (OPTIONAL)
+    * @return {promise} team roster
+    */
+   getStatRankingsFromID: function(id, season) {
+     const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}/stats${season ? "?season=" + season : ""}`
+     return new Promise((resolve, reject) => {
+       if (season && !helpers.isValidSeasonFormat(season)) {
+         reject("Invalid Season Format")
+       }
+       fetch(url).then((res) => {
+         resolve(res.stats[1].splits)
+       }).catch((error) => {
+         reject(error)
+       })
+     })
+   }
 }
