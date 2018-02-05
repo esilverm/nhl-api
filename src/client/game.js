@@ -56,5 +56,37 @@ module.exports = {
     })
   },
 
+  /**
+   * Retrieve full game info
+   *
+   * @param {string} gameID - game ID
+   * @return {Promise} Object containing all Game Data
+   */
+  get: function(id) {
+    const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`
+    return new Promise((resolve, reject) => {
+      fetch(url).then((res) => {
+        resolve(res.gameData)
+      }).catch((err) => {
+        reject(err)
+      })
+    })
+  },
 
+  /**
+   * Retrieve short game data info
+   *
+   * @param {string} gameID - game ID
+   * @return {Promise} Object containing all live plays
+   */
+   getContent: function(id) {
+     const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/content`
+     return new Promise((resolve, reject) => {
+       fetch(url).then((res) => {
+         resolve(res.editorial.preview.items)
+       }).catch((err) => {
+         reject(err)
+       })
+     })
+   }
 }
