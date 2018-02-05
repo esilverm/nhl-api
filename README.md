@@ -1,4 +1,4 @@
-# node-nhl-api [![Build Status][travis]
+# node-nhl-api [![Build Status][travis]]
 > A promise-based wrapper for the NHL API in Node.js
 
 ## Table Of Contents
