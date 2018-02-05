@@ -35,7 +35,7 @@ module.exports = {
   /**
    * Retrieve short game data info
    *
-   * @return {Promise} Game
+   * @return {Promise} Object containing game id, time, and teams
    */
   getTodayGames: function() {
     const url = `https://statsapi.web.nhl.com/api/v1/schedule`;
