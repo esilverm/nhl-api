@@ -7,7 +7,7 @@ fetch("https://statsapi.web.nhl.com/api/v1/teams?season=19691970").then((res) =>
 **/
 
 nhl.Game.getGameIDs("20172018", nhl.Teams.getAbbrev("Tampa Bay Lightning")).then((games) => {
-  console.log(games)
+  console.log("Module is functioning properly");
 })
 /**
 nhl.Game.getTodayGameIDs().then((res) => {
