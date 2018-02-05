@@ -1,6 +1,6 @@
 const fetch = require('../utils/fetch.js')
 const helpers = require('../utils/helpers.js')
-
+const teams = require('../../lib/teams.json')
 module.exports = {
 
   /**
@@ -21,6 +21,33 @@ module.exports = {
      })
    },
 
+   /**
+    * Method to get team id from name
+    *
+    * @param {string} team - Team Name (spelling is important)
+    * @return {number} team id
+    */
+   getID: function(team) {
+     team = team.toLowerCase();
+     if (!teams[team]) {
+       return new Error('No id was found. Check that the provided team is spelled correctly')
+     }
+     return teams[team].id
+   },
+
+   /**
+    * Method to get team abbreviation from name
+    *
+    * @param {string} team - Team Name (spelling is important)
+    * @return {string} team abbreviation
+    */
+   getAbbrev: function(team){
+     team = team.toLowerCase();
+     if (!teams[team]) {
+       return new Error('No abbreviation was found. Check that the provided team is spelled correctly')
+     }
+     return teams[team].nickname.toUpperCase();
+   },
    /**
     * Method to list all NHL team data from season
     *
@@ -45,17 +72,21 @@ module.exports = {
     * Method to list all players for a team in a specific season
     *
     * @param {string} id - team id
-    * @param {string} season - season (OPTIONAL)
+    * @param {string} season - season (OPTIONAL IF TEAM STILL EXISTS)
     * @return {promise} team roster
     */
-   getTeamRosterFromID: function(id, season) {
+   getRoster: function(id, season) {
      const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}?expand=team.roster,roster.person${season ? "&season=" + season : ""}`
      return new Promise((resolve, reject) => {
        if (season && !helpers.isValidSeasonFormat(season)) {
          reject("Invalid Season Format")
        }
        fetch(url).then((res) => {
-         resolve(res.teams[0].roster.roster)
+         try {
+           resolve(res.teams[0].roster.roster)
+         } catch (err) {
+           resolve(res.teams[0])
+         }
        }).catch((error) => {
          reject(error)
        })
@@ -69,7 +100,7 @@ module.exports = {
     * @param {string} season - season (OPTIONAL)
     * @return {promise} team roster
     */
-   getStatsFromID: function(id, season) {
+   getStats: function(id, season) {
      const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}/stats${season ? "?season=" + season : ""}`
      return new Promise((resolve, reject) => {
        if (season && !helpers.isValidSeasonFormat(season)) {
@@ -90,7 +121,7 @@ module.exports = {
     * @param {string} season - season (OPTIONAL)
     * @return {promise} team roster
     */
-   getStatRankingsFromID: function(id, season) {
+   getStatRankings: function(id, season) {
      const url = `https://statsapi.web.nhl.com/api/v1/teams/${id}/stats${season ? "?season=" + season : ""}`
      return new Promise((resolve, reject) => {
        if (season && !helpers.isValidSeasonFormat(season)) {

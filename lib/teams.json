@@ -1,0 +1,326 @@
+{
+  "pittsburgh pirates": {
+    "id": 38,
+    "nickname": "pir"
+  },
+  "pittsburgh penguins": {
+    "id": 5,
+    "nickname": "pit"
+  },
+  "czech republic": {
+    "id": 61,
+    "nickname": "cze"
+  },
+  "toronto st. patricks": {
+    "id": 58,
+    "nickname": "tsp"
+  },
+  "cleveland barons": {
+    "id": 49,
+    "nickname": "cle"
+  },
+  "united states": {
+    "id": 67,
+    "nickname": "usa"
+  },
+  "oakland seals": {
+    "id": 46,
+    "nickname": "oak"
+  },
+  "new york americans": {
+    "id": 44,
+    "nickname": "nya"
+  },
+  "california golden seals": {
+    "id": 56,
+    "nickname": "cgs"
+  },
+  "new jersey devils": {
+    "id": 1,
+    "nickname": "njd"
+  },
+  "new york islanders": {
+    "id": 2,
+    "nickname": "nyi"
+  },
+  "tampa bay lightning": {
+    "id": 14,
+    "nickname": "tbl"
+  },
+  "philadelphia flyers": {
+    "id": 4,
+    "nickname": "phi"
+  },
+  "new york rangers": {
+    "id": 3,
+    "nickname": "nyr"
+  },
+  "columbus blue jackets": {
+    "id": 29,
+    "nickname": "cbj"
+  },
+  "san jose sharks": {
+    "id": 28,
+    "nickname": "sjs"
+  },
+  "boston bruins": {
+    "id": 6,
+    "nickname": "bos"
+  },
+  "vancouver canucks": {
+    "id": 23,
+    "nickname": "van"
+  },
+  "ottawa senators": {
+    "id": 9,
+    "nickname": "ott"
+  },
+  "hartford whalers": {
+    "id": 34,
+    "nickname": "hfd"
+  },
+  "anaheim ducks": {
+    "id": 24,
+    "nickname": "ana"
+  },
+  "calgary flames": {
+    "id": 20,
+    "nickname": "cgy"
+  },
+  "edmonton oilers": {
+    "id": 22,
+    "nickname": "edm"
+  },
+  "carolina hurricanes": {
+    "id": 12,
+    "nickname": "car"
+  },
+  "colorado avalanche": {
+    "id": 21,
+    "nickname": "col"
+  },
+  "montréal canadiens": {
+    "id": 8,
+    "nickname": "mtl"
+  },
+  "colorado rockies": {
+    "id": 35,
+    "nickname": "clr"
+  },
+  "chicago blackhawks": {
+    "id": 16,
+    "nickname": "chi"
+  },
+  "winnipeg jets (1979)": {
+    "id": 33,
+    "nickname": "win"
+  },
+  "atlanta flames": {
+    "id": 47,
+    "nickname": "afm"
+  },
+  "dallas stars": {
+    "id": 25,
+    "nickname": "dal"
+  },
+  "detroit red wings": {
+    "id": 17,
+    "nickname": "det"
+  },
+  "minnesota north stars": {
+    "id": 31,
+    "nickname": "mns"
+  },
+  "washington capitals": {
+    "id": 15,
+    "nickname": "wsh"
+  },
+  "toronto maple leafs": {
+    "id": 10,
+    "nickname": "tor"
+  },
+  "phoenix coyotes": {
+    "id": 27,
+    "nickname": "phx"
+  },
+  "stockman farjestad": {
+    "id": 82,
+    "nickname": "swf"
+  },
+  "quebec nordiques": {
+    "id": 32,
+    "nickname": "que"
+  },
+  "toronto arenas": {
+    "id": 57,
+    "nickname": "tan"
+  },
+  "minnesota wild": {
+    "id": 30,
+    "nickname": "min"
+  },
+  "buffalo sabres": {
+    "id": 7,
+    "nickname": "buf"
+  },
+  "florida panthers": {
+    "id": 13,
+    "nickname": "fla"
+  },
+  "nashville predators": {
+    "id": 18,
+    "nickname": "nsh"
+  },
+  "ottawa senators (1917)": {
+    "id": 36,
+    "nickname": "sen"
+  },
+  "atlanta thrashers": {
+    "id": 11,
+    "nickname": "atl"
+  },
+  "hamilton tigers": {
+    "id": 37,
+    "nickname": "ham"
+  },
+  "los angeles kings": {
+    "id": 26,
+    "nickname": "lak"
+  },
+  "all-stars east": {
+    "id": 97,
+    "nickname": "ase"
+  },
+  "team chara": {
+    "id": 92,
+    "nickname": "blu"
+  },
+  "team central": {
+    "id": 89,
+    "nickname": "cen"
+  },
+  "montreal wanderers": {
+    "id": 41,
+    "nickname": "mwn"
+  },
+  "quebec bulldogs": {
+    "id": 42,
+    "nickname": "qbd"
+  },
+  "sweden": {
+    "id": 66,
+    "nickname": "swe"
+  },
+  "young stars west": {
+    "id": 101,
+    "nickname": "ysw"
+  },
+  "philadelphia quakers": {
+    "id": 39,
+    "nickname": "qua"
+  },
+  "stockholm djurgarden": {
+    "id": 81,
+    "nickname": "swd"
+  },
+  "all-stars west": {
+    "id": 98,
+    "nickname": "asw"
+  },
+  "team metropolitan": {
+    "id": 88,
+    "nickname": "met"
+  },
+  "kansas city scouts": {
+    "id": 48,
+    "nickname": "kcs"
+  },
+  "st. louis eagles": {
+    "id": 45,
+    "nickname": "sle"
+  },
+  "germany": {
+    "id": 63,
+    "nickname": "ger"
+  },
+  "winnipeg jets": {
+    "id": 52,
+    "nickname": "wpg"
+  },
+  "arizona coyotes": {
+    "id": 53,
+    "nickname": "ari"
+  },
+  "montreal maroons": {
+    "id": 43,
+    "nickname": "mmr"
+  },
+  "detroit falcons": {
+    "id": 50,
+    "nickname": "dfl"
+  },
+  "slovakia": {
+    "id": 65,
+    "nickname": "svk"
+  },
+  "detroit cougars": {
+    "id": 40,
+    "nickname": "dcg"
+  },
+  "team foligno": {
+    "id": 93,
+    "nickname": "blk"
+  },
+  "russia": {
+    "id": 64,
+    "nickname": "rus"
+  },
+  "helsinki jokerit": {
+    "id": 80,
+    "nickname": "fin"
+  },
+  "team pacific": {
+    "id": 90,
+    "nickname": "pac"
+  },
+  "team staal": {
+    "id": 95,
+    "nickname": "asr"
+  },
+  "young stars east": {
+    "id": 100,
+    "nickname": "yse"
+  },
+  "team atlantic": {
+    "id": 87,
+    "nickname": "atl"
+  },
+  "team alfredsson": {
+    "id": 91,
+    "nickname": "red"
+  },
+  "team lidstrom": {
+    "id": 96,
+    "nickname": "asb"
+  },
+  "canada": {
+    "id": 60,
+    "nickname": "can"
+  },
+  "st. louis blues": {
+    "id": 19,
+    "nickname": "stl"
+  },
+  "finland": {
+    "id": 62,
+    "nickname": "fin"
+  },
+  "vegas golden knights": {
+    "id": 54,
+    "nickname": "vgk"
+  },
+  "team toews": {
+    "id": 94,
+    "nickname": "wht"
+  }
+}

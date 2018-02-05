@@ -17,7 +17,11 @@ var get = function(url, callback) {
         body.push(d)
       })
       res.on('end', () => {
-        resolve(JSON.parse(body.join('')))
+        try {
+          resolve(JSON.parse(body.join('')))
+        } catch (err) {
+          reject(err)
+        }
       })
     })
     request.on('error', (error) => {
