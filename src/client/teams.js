@@ -7,7 +7,6 @@ module.exports = {
    * Method to list current nhl team data
    *
    * @param {string} id - Team ID (OPTIONAL)
-   * @param {string} season - season (OPTIONAL)
    * @return {promise} all current NHL teams
    */
    get: function(id) {
@@ -67,6 +66,39 @@ module.exports = {
        })
      })
    },
+
+   /**
+    * Method to list all players for a team in a specific season
+    *
+    * @param {string} id - team id
+    * @param {string} season - season (OPTIONAL IF TEAM STILL EXISTS)
+    * @return {promise} team roster
+    */
+   getRosters: function(season) {
+     const url = `https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster,roster.person${season ? "&season=" + season : ""}`
+     return new Promise((resolve, reject) => {
+       if (season && !helpers.isValidSeasonFormat(season)) {
+         reject("Invalid Season Format")
+       }
+       fetch(url).then((res) => {
+         try {
+           let rosters = res.teams.map((curr) => {
+             return {
+               "id": curr.id,
+               "name": curr.name,
+               "roster": curr.roster.roster
+             }
+           })
+           resolve(rosters)
+         } catch (err) {
+           resolve(res.teams)
+         }
+       }).catch((error) => {
+         reject(error)
+       })
+     })
+   },
+
 
    /**
     * Method to list all players for a team in a specific season

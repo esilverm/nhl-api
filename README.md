@@ -62,6 +62,7 @@ nhl.Teams.getRoster(lightning, "20032004").then((res) => {
        birthCity: 'Laval',
        ...
 ```
+### Handling the Promise
 
 
 ## api
@@ -88,7 +89,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Evan Silverman**
+* [**Evan Silverman**](https://github.com/esilverm)
 
 See also the list of [contributors](https://github.com/esilverm/node-nhl-api/contributors) who participated in this project.
 
