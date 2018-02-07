@@ -1,6 +1,6 @@
 # node-nhl-api &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/node-nhl-api.svg?token=3cy6pRwSP7RhixpwXPpq&branch=master&style=flat-square)](https://travis-ci.com/esilverm/node-nhl-api)
 
-One Paragraph of project description goes here
+[node-nhl-api](https://github.com/esilverm/node-nhl-api) provides a simple, organized wrapper for the NHL api.
 
 ## Getting Started
 
@@ -8,19 +8,75 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
+This library is distributed on `npm`. In order to add it as a dependency, run the following command:
 ```
-$ npm install [guy name]
+$ npm install [name]
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Usage
+**Example** Retrieves the roster for the 2003-2004 season of the Tampa Bay Lightning and outputs player data for all of the centers:
+```javascript
+const nhl = require('[module name]')
+var lightning = nhl.Teams.getID("Tampa Bay Lightning")
 
-All commands for each thing and examples
+nhl.Teams.getRoster(lightning, "20032004").then((res) => {
+  var centers = res.filter((curr) => {
+    return curr.position.name === "Center";
+  })
+  console.log(centers);
+}).catch((err) => {
+  console.log(err)
+})
+```
+**Example output**
+```
+[ { person:
+     { id: 8458192,
+       fullName: 'Tim Taylor',
+       link: '/api/v1/people/8458192',
+       firstName: 'Tim',
+       lastName: 'Taylor',
+       primaryNumber: '27',
+       birthDate: '1969-02-06',
+       birthCity: 'Stratford',
+       birthStateProvince: 'ON',
+       birthCountry: 'CAN',
+       nationality: 'CAN',
+       height: '6\' 1"',
+       weight: 190,
+       active: false,
+       rookie: false,
+       shootsCatches: 'L',
+       rosterStatus: 'N',
+       primaryPosition: { code: 'C', name: 'Center', type: 'Forward', abbreviation: 'C' } },
+    jerseyNumber: '27',
+    position: { code: 'C', name: 'Center', type: 'Forward', abbreviation: 'C' } },
+  { person:
+     { id: 8466399,
+       fullName: 'Eric Perrin',
+       link: '/api/v1/people/8466399',
+       firstName: 'Eric',
+       lastName: 'Perrin',
+       primaryNumber: '11',
+       birthDate: '1975-11-01',
+       birthCity: 'Laval',
+       ...
+```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+## api
+
+### Teams
+
+### People
+
+### Games
+
+### Schedule
+
+### Standings
+
+### Draft
 
 ## Contributing
 
@@ -38,4 +94,4 @@ See also the list of [contributors](https://github.com/esilverm/node-nhl-api/con
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
