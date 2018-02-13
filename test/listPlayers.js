@@ -1,6 +1,7 @@
-const nhl = require('./src')
-
+const nhl = require('../src')
+const _ = require('lodash')
 // 7654
+
 var plyobj = {}
 let allPlayers = {}
 
@@ -21,12 +22,12 @@ for (var i = 1917; i <= 2017; i++) {
     for (var j = 0; j < res.length; j++) {
       let curr = res[j].roster;
       for (var k = 0; k < curr.length; k++) {
-        if (!plyobj[curr[k].person.fullName]) {
-          plyobj[curr[k].person.fullName] = curr[k].person.id
+        if (!plyobj[curr[k].person.fullName.toLowerCase()]) {
+          plyobj[curr[k].person.fullName.toLowerCase()] = curr[k].person.id
         }
       }
     }
-    if (_.size(plyobj) === 7603) {
+    if (_.size(plyobj) >= 7604) {
       let ar = makeSortable(plyobj)
       for (var i = 0; i < ar.length; i++) {
         allPlayers[ar[i][0]] = ar[i][1]

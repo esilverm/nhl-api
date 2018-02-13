@@ -1,15 +1,16 @@
-const nhl = require('../src')
-const fetch = require('../src/utils/fetch.js')
+const nhl = require('./src')
+const fetch = require('./src/utils/fetch.js')
 /**
 fetch("https://statsapi.web.nhl.com/api/v1/teams?season=19691970").then((res) => {
   console.log(res)
 })
 **/
 //var lightning = nhl.Teams.getAbbrev("Tampa Bay Lightning")
-
+/**
 nhl.Game.getGameIDs("20172018", nhl.Teams.getAbbrev("Tampa Bay Lightning")).then((games) => {
   console.log("Module is functioning properly");
 })
+**/
 /**
 nhl.Game.getTodayGameIDs().then((res) => {
   console.log(res)
@@ -40,3 +41,14 @@ nhl.Teams.getRoster(lightning, "20032004").then((res) => {
 }).catch((err) => {
   console.log(err)
 })**/
+nhl.Players.getHeadshots(nhl.Players.getID("Nikita Kucherov")).then((res) => {
+  console.log(res)
+}).catch((err) => {
+  console.log(err)
+})
+
+/**
+nhl.Game.getPlays(2017020830).then((res) => {
+  console.log(res.filter((curr) => {return curr.result.event === 'Goal'}))
+})
+**/

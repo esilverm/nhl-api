@@ -24,8 +24,12 @@
   },
   "homepage": "https://github.com/esilverm/node-nhl-api#readme",
   "dependencies": {
+    "query-string": "^5.1.0"
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.5"
   }
 }

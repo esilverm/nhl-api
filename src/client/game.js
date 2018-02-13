@@ -4,6 +4,24 @@ const helpers = require('../utils/helpers.js')
 module.exports = {
 
   /**
+   * Retrieve full game info
+   *
+   * @param {string} gameID - game ID
+   * @return {Promise} Object containing all Game Data
+   */
+  get: function(id) {
+    const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`
+    return new Promise((resolve, reject) => {
+      fetch(url).then((res) => {
+        resolve(res)
+      }).catch((err) => {
+        reject(err)
+      })
+    })
+  },
+
+
+  /**
    * Retrieve all game id's for a season
    *
    * @param {string} season - desired season. FORMAT: YYYYYYYY -> 20162017
@@ -57,27 +75,10 @@ module.exports = {
   },
 
   /**
-   * Retrieve full game info
-   *
-   * @param {string} gameID - game ID
-   * @return {Promise} Object containing all Game Data
-   */
-  get: function(id) {
-    const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/feed/live`
-    return new Promise((resolve, reject) => {
-      fetch(url).then((res) => {
-        resolve(res.gameData)
-      }).catch((err) => {
-        reject(err)
-      })
-    })
-  },
-
-  /**
    * Retrieve short game data info
    *
    * @param {string} gameID - game ID
-   * @return {Promise} Object containing all live plays
+   * @return {Promise} Object containing all game media
    */
    getContent: function(id) {
      const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/content`
@@ -88,5 +89,22 @@ module.exports = {
          reject(err)
        })
      })
+   },
+
+   /**
+    * Retrieve live game plays
+    *
+    * @param {string} gameID - game ID
+    * @return {Promise} Object containing all live plays
+    */
+   getPlays: function(id) {
+     return new Promise((resolve, reject) => {
+       this.get(id).then((res) => {
+         resolve(res.liveData.plays.allPlays)
+       }).catch((err) => {
+         reject(err)
+       })
+     })
    }
+
 }

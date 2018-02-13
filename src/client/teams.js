@@ -1,6 +1,10 @@
 const fetch = require('../utils/fetch.js')
 const helpers = require('../utils/helpers.js')
 const teams = require('../../lib/teams.json')
+//team logos
+//https://www-league.nhlstatic.com/builds/site-core/86d4b76cc03a4d111ee0e20f9f62eb054eef3b74_1502985652/images/logos/team/current/team-${id}-light.svg
+//https://www-league.nhlstatic.com/builds/site-core/86d4b76cc03a4d111ee0e20f9f62eb054eef3b74_1502985652/images/logos/team/current/team-${id}-dark.svg
+//http://cdn.nhle.com/nhl/images/logos/teams/${team abbrev}_logo.svgz
 module.exports = {
 
   /**
@@ -10,7 +14,7 @@ module.exports = {
    * @return {promise} all current NHL teams
    */
    get: function(id) {
-     var url = `https://statsapi.web.nhl.com/api/v1/teams${id ? "/" + id : ""}`
+     const url = `https://statsapi.web.nhl.com/api/v1/teams${id ? "/" + id : ""}`
      return new Promise((resolve, reject) => {
        fetch(url).then((res) => {
          resolve(id ? res.teams[0] : res.teams);

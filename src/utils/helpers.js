@@ -7,7 +7,7 @@ module.exports = {
    * @param {string} date - date
    * @return {boolean} whether date is correct or not
    */
-  isValidDataFormat: function(date) {
+  isValidDateFormat: function(date) {
     const regex = /^(19|20\d\d)[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/
     const matches = date.match(regex)
     if (matches) {
