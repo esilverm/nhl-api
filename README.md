@@ -1,6 +1,6 @@
-# node-nhl-api &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/node-nhl-api.svg?branch=master&style=flat-square)](https://travis-ci.com/esilverm/node-nhl-api)
+# statsapi-nhl &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/statsapi-nhl.svg?branch=master&style=flat-square)](https://travis-ci.com/esilverm/statsapi-nhl)
 
-[node-nhl-api](https://github.com/esilverm/node-nhl-api) provides a simple, organized way to access the NHL api.
+[statsapi-nhl](https://github.com/esilverm/statsapi-nhl) provides a simple, organized way to access the NHL api.
 
 ## Getting Started
 
@@ -10,13 +10,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 This library is distributed on `npm`. In order to add it as a dependency, run the following command:
 ```
-$ npm install [name]
+$ npm install statsapi-nhl
 ```
 
 ## Usage
 **Example** Retrieves the roster for the 2003-2004 season of the Tampa Bay Lightning and outputs player data for all of the centers:
 ```javascript
-const nhl = require('[module name]')
+const nhl = require('statsapi-nhl')
 var lightning = nhl.Teams.getID("Tampa Bay Lightning")
 
 nhl.Teams.getRoster(lightning, "20032004").then((res) => {
@@ -87,7 +87,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 * [**Evan Silverman**](https://github.com/esilverm)
 
-See also the list of [contributors](https://github.com/esilverm/node-nhl-api/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/esilverm/statsapi-nhl/contributors) who participated in this project.
 
 ## License
 

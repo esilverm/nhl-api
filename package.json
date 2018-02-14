@@ -1,5 +1,5 @@
 {
-  "name": "nhl-api",
+  "name": "statsapi-nhl",
   "version": "1.0.0",
   "description": "A Promise-based wrapper for the National Hockey League API",
   "main": "./src/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/esilverm/node-nhl-api.git"
+    "url": "git+https://github.com/esilverm/statsapi-nhl.git"
   },
   "keywords": [
     "hockey",
@@ -20,9 +20,9 @@
   "author": "Evan Silverman <evanalecs@aol.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/esilverm/node-nhl-api/issues"
+    "url": "https://github.com/esilverm/statsapi-nhl/issues"
   },
-  "homepage": "https://github.com/esilverm/node-nhl-api#readme",
+  "homepage": "https://github.com/esilverm/statsapi-nhl#readme",
   "dependencies": {
     "query-string": "^5.1.0"
   },
