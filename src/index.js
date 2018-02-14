@@ -4,5 +4,7 @@ module.exports = {
   Schedule: require('./client/schedule.js'),
   Standings: require('./client/standings.js'),
   Game: require('./client/game.js'),
-  Draft: require('./client/draft.js')
+  Draft: require('./client/draft.js'),
+  Conferences: require('./client/conferences.js'),
+  Divisions: require('./client/divisions.js')
 }

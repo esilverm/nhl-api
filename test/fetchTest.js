@@ -1,5 +1,6 @@
 const nhl = require('../src')
 const fetch = require('../src/utils/fetch.js')
+
 /**
 fetch("https://statsapi.web.nhl.com/api/v1/teams?season=19691970").then((res) => {
   console.log(res)
@@ -41,6 +42,7 @@ nhl.Teams.getRoster(lightning, "20032004").then((res) => {
 }).catch((err) => {
   console.log(err)
 })**/
+/**
 nhl.Players.getHeadshots(nhl.Players.getID("Nikita Kucherov")).then((res) => {
   //console.log(res)
 }).catch((err) => {
@@ -51,4 +53,10 @@ nhl.Schedule.get().then((res) => {
   //console.log(res)
 }).catch((err)=> {
   //console.log(err)
+})
+**/
+nhl.Conferences.get(4).then((res) => {
+  console.log("this is functioning properly")
+}).catch((err)=> {
+  console.log(err)
 })
