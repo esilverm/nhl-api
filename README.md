@@ -1,4 +1,4 @@
-# statsapi-nhl &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/statsapi-nhl.svg?branch=master&style=flat-square)](https://travis-ci.com/esilverm/statsapi-nhl)
+# statsapi-nhl &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/node-nhl-api.svg?branch=master)](https://travis-ci.com/esilverm/node-nhl-api)&nbsp;&nbsp;[![NPM version](https://img.shields.io/npm/v/statsapi-nhl.svg)](https://www.npmjs.com/package/statsapi-nhl)
 
 [statsapi-nhl](https://github.com/esilverm/statsapi-nhl) provides a simple, organized way to access the NHL api.
 
