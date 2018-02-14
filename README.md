@@ -1,4 +1,4 @@
-# node-nhl-api &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/node-nhl-api.svg?token=3cy6pRwSP7RhixpwXPpq&branch=master&style=flat-square)](https://travis-ci.com/esilverm/node-nhl-api)
+# node-nhl-api &nbsp;&nbsp;[![Build Status](https://travis-ci.com/esilverm/node-nhl-api.svg?branch=master&style=flat-square)](https://travis-ci.com/esilverm/node-nhl-api)
 
 [node-nhl-api](https://github.com/esilverm/node-nhl-api) provides a simple, organized way to access the NHL api.
 
