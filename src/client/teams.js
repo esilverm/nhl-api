@@ -72,9 +72,8 @@ module.exports = {
    },
 
    /**
-    * Method to list all players for a team in a specific season
+    * Method to list all players for all team in a specific season
     *
-    * @param {string} id - team id
     * @param {string} season - season (OPTIONAL IF TEAM STILL EXISTS)
     * @return {promise} team roster
     */
