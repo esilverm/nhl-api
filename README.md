@@ -2,11 +2,7 @@
 
 [statsapi-nhl](https://github.com/esilverm/statsapi-nhl) provides a simple, organized way to access the NHL api.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Installing
+## Installing
 
 This library is distributed on `npm`. In order to add it as a dependency, run the following command:
 ```
