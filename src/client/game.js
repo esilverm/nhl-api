@@ -75,7 +75,7 @@ module.exports = {
   },
 
   /**
-   * Retrieve short game data info
+   * Retrieve game media
    *
    * @param {string} gameID - game ID
    * @return {Promise} Object containing all game media
@@ -105,6 +105,22 @@ module.exports = {
          reject(err)
        })
      })
-   }
+   },
 
+   /**
+    * Retrieve game boxscore
+    *
+    * @param {string} gameID - game ID
+    * @return {Promise} Entire game boxscore
+    */
+    getBoxscore: function(id) {
+      const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/boxscore`
+      return new Promise((resolve, reject) => {
+        fetch(url).then((res) => {
+          resolve(res.teams)
+        }).catch((err) => {
+          reject(err)
+        })
+      })
+    }
 }

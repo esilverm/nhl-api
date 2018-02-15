@@ -6,14 +6,14 @@ module.exports = {
    *
    * Get division or division data
    *
-   * @param {string} id conference id
-   * @return {Promise} conference data
+   * @param {string} id division id
+   * @return {Promise} division data
    */
   get: function(id) {
     const url = `https://statsapi.web.nhl.com/api/v1/divisions/${id ? id : ""}`
     return new Promise(function(resolve, reject) {
       fetch(url).then((res) => {
-        resolve(res.divisions)
+        resolve(id ? res.divisions[0] : res.divisions)
       }).catch((err) => {
         reject(err)
       })

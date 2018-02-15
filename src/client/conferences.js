@@ -13,7 +13,7 @@ module.exports = {
     const url = `https://statsapi.web.nhl.com/api/v1/conferences/${id ? id : ""}`
     return new Promise(function(resolve, reject) {
       fetch(url).then((res) => {
-        resolve(res.conferences)
+        resolve(id ? res.conferences[0] : res.conferences)
       }).catch((err) => {
         reject(err)
       })
