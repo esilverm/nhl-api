@@ -1,6 +1,6 @@
 {
   "name": "statsapi-nhl",
-  "version": "0.0.0-development",
+  "version": "0.0.0-sematically-released",
   "description": "A Promise-based wrapper for the National Hockey League API",
   "main": "./src/index.js",
   "scripts": {
