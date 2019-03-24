@@ -122,5 +122,22 @@ module.exports = {
           reject(err)
         })
       })
+    },
+
+    /**
+    * Retrieve game linescore
+    *
+    * @param {string} gameID - game ID
+    * @return {Promise} Entire game linescore
+    */
+    getLinescore: function(id) {
+      const url = `https://statsapi.web.nhl.com/api/v1/game/${id}/linescore`
+      return new Promise((resolve, reject) => {
+        fetch(url).then((res) => {
+          resolve(res)
+        }).catch((err) => {
+          reject(err)
+        })
+      })
     }
 }
