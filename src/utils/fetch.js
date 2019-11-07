@@ -1,33 +1,24 @@
+const qs = require('query-string');
+const axios = require('axios');
+
+const BASE_URL = 'https://statsapi.web.nhl.com';
+
 /**
  * Request data from api and return JSON response.
  *
- * @param {string} url - desired endpoint to request data from
- * @param {function} callback - function to modify data retrieved
+ * @param {string} endpoint - desired endpoint to request data from site
+ * @param {Object} params - parameters to search with
+ * @return {Promise<Object>} data returned from our fetch
  */
+async function fetchResource(endpoint, params = null) {
+  const url = `${BASE_URL}${endpoint}`;
+  const config = {
+    url,
+    params,
+  };
 
-var get = function(url, callback) {
-  return new Promise((resolve, reject) => {
-    const lib = url.startsWith('https') ? require('https'): require('http')
-    const request = lib.get(url, res => {
-      if (res.statusCode < 200 || res.statusCode > 299) {
-        reject(new Error('Request failed with error code: ' + res.statusCode))
-      }
-      const body = []
-      res.on('data', d => {
-        body.push(d)
-      })
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(body.join('')))
-        } catch (err) {
-          reject(err)
-        }
-      })
-    })
-    request.on('error', (error) => {
-      reject(error)
-    })
-  })
+  const res = await axios(config).then((res) => res.data)
+  return res;
 }
 
-module.exports = get;
+module.exports = fetchResource;

@@ -20,13 +20,14 @@
     "node",
     "nhl"
   ],
-  "author": "Evan Silverman <evanalecs@aol.com>",
+  "author": "Evan Silverman <es4753@nyu.edu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/esilverm/statsapi-nhl/issues"
   },
   "homepage": "https://github.com/esilverm/statsapi-nhl#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "query-string": "^5.1.0"
   },
   "engines": {
