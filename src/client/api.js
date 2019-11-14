@@ -1,4 +1,7 @@
-const { fetchStats, fetchRecords } = require('../utils/fetch.js');
+const {
+  fetchStats,
+  fetchRecords
+} = require('../utils/fetch.js');
 
 class NHLApi {
 
@@ -6,7 +9,7 @@ class NHLApi {
    * This API is documented at this site:
    * https://gitlab.com/dword4/nhlapi/blob/master/stats-api.md
    *
-  */
+   */
 
   // GENERAL
 
@@ -131,25 +134,27 @@ class NHLApi {
    * @param {Object} params - parameters to search with
    * @return {Promise} NHL player data
    */
-   async getPlayer(id = '', params = null) {
-     const endpoint = `/api/v1/people/${id}`;
-     return await fetchStats(endpoint, params);
-   }
+  async getPlayer(id = '', params = null) {
+    const endpoint = `/api/v1/people/${id}`;
+    return await fetchStats(endpoint, params);
+  }
 
-   /**
-    * Makes a query to the people stats endpoint of the api
-    *
-    * @param {string} id - the specific NHL player id. REQUIRED
-    * @param {Object} params - parameters to search with. Must specify stat type
-    * @return {Promise} NHL player stats
-    */
-    async getPlayerStats(
-      id = '',
-      params = { 'stats': 'statsSingleSeason' }
-    ) {
-      const endpoint = `/api/v1/people/${id}/stats`;
-      return await fetchStats(endpoint, params);
+  /**
+   * Makes a query to the people stats endpoint of the api
+   *
+   * @param {string} id - the specific NHL player id. REQUIRED
+   * @param {Object} params - parameters to search with. Must specify stat type
+   * @return {Promise} NHL player stats
+   */
+  async getPlayerStats(
+    id = '',
+    params = {
+      'stats': 'statsSingleSeason'
     }
+  ) {
+    const endpoint = `/api/v1/people/${id}/stats`;
+    return await fetchStats(endpoint, params);
+  }
 
   // STANDINGS
 
@@ -251,7 +256,7 @@ class NHLApi {
    *
    * @param {Object} params - parameters to search with
    * @return {Promise} every all-time NHL record
-  */
+   */
   async getRecordDetails(params = null) {
     const endpoint = `/record-detail`;
     return await fetchStats(endpoint, params);
@@ -264,9 +269,12 @@ class NHLApi {
    * @param {Object} id - specific franchise id REQUIRED
    * @param {Object} params - parameters to search with
    * @return {Promise} list of all time records for a franchise
-  */
+   */
   async getRecordsVsFranchise(id = '', params = null) {
-    const options = { id, ...params };
+    const options = {
+      id,
+      ...params
+    };
     const endpoint = `/all-time-record-vs-franchise`;
     return await fetchStats(endpoint, options);
   }
@@ -278,12 +286,15 @@ class NHLApi {
    * @param {Object} id - specific franchise id REQUIRED   *
    * @param {Object} params - parameters to search with
    * @return {Promise} every all-time NHL record
-  */
+   */
   async getPlayoffRecordsVsFranchise(id = '', params = null) {
-    const options = { id, ...params };
+    const options = {
+      id,
+      ...params
+    };
     const endpoint = `/playoff-franchise-vs-franchise`;
     return await fetchStats(endpoint, options);
-
+  }
 
   // VENUES
 
@@ -306,53 +317,53 @@ class NHLApi {
    *
    * @return {Promise} a list of stat types
    */
-   async getStatTypes() {
-     const endpoint = `/api/v1/statTypes`;
-     return await fetchStats(endpoint);
-   }
+  async getStatTypes() {
+    const endpoint = `/api/v1/statTypes`;
+    return await fetchStats(endpoint);
+  }
 
-   /**
-    * Gets all stat types for standings data
-    *
-    * @return {Promise} a list of stat types
-    */
-    async getStandingsTypes() {
-      const endpoint = `/api/v1/standingsTypes`;
-      return await fetchStats(endpoint);
-    }
+  /**
+   * Gets all stat types for standings data
+   *
+   * @return {Promise} a list of stat types
+   */
+  async getStandingsTypes() {
+    const endpoint = `/api/v1/standingsTypes`;
+    return await fetchStats(endpoint);
+  }
 
-    /**
-     * Gets all game types for game data
-     *
-     * @return {Promise} a list of game types
-     */
-     async getGameTypes() {
-       const endpoint = `/api/v1/gameTypes`;
-       return await fetchStats(endpoint);
-     }
+  /**
+   * Gets all game types for game data
+   *
+   * @return {Promise} a list of game types
+   */
+  async getGameTypes() {
+    const endpoint = `/api/v1/gameTypes`;
+    return await fetchStats(endpoint);
+  }
 
-     /**
-      * Gets all play types for game data
-      *
-      * @return {Promise} a list of play types
-      */
-      async getPlayTypes() {
-        const endpoint = `/api/v1/playTypes`;
-        return await fetchStats(endpoint);
-      }
+  /**
+   * Gets all play types for game data
+   *
+   * @return {Promise} a list of play types
+   */
+  async getPlayTypes() {
+    const endpoint = `/api/v1/playTypes`;
+    return await fetchStats(endpoint);
+  }
 
-      /**
-       * Gets all event types
-       * This is just to give coverage of the entire api
-       *  in the documentation i've used it is mentioned as an artifact
-       *  from reconfiguration
-       *
-       * @return {Promise} a list of event types
-       */
-       async getEventTypes() {
-         const endpoint = `/api/v1/eventTypes`;
-         return await fetchStats(endpoint);
-       }
+  /**
+   * Gets all event types
+   * This is just to give coverage of the entire api
+   *  in the documentation i've used it is mentioned as an artifact
+   *  from reconfiguration
+   *
+   * @return {Promise} a list of event types
+   */
+  async getEventTypes() {
+    const endpoint = `/api/v1/eventTypes`;
+    return await fetchStats(endpoint);
+  }
 }
 
 export default NHLApi;
