@@ -1,10 +1,12 @@
-# Utils
+# fetch.js
 
-For this project there are two util files that are being used.
+## What is this?
 
-## fetch.js
+This is how I will be fetching the data from the NHL api. There are two api endpoints that the site uses. There is the statsapi.web.nhl site and then the records.nhl.com/site/api. The inclusion of the latter api makes this wrapper "not like the other wrappers". 
 
-This file contains our function we will be using to fetch data from the API. Here is an example of its possible ways of usage.
+## Examples
+
+Here are some examples of use for the stats fetch function.
 
 ```javascript
 // assuming that we are working in the same directory as the file.
@@ -17,13 +19,13 @@ const fetch = require('./fetch.js');
  */
 
 // 1.
-fetch('/api/v1/teams/14').then(res => {
+fetch.fetchStats('/api/v1/teams/14').then(res => {
   // handle data
 });
 
 // 2.
 async function handleData() {
-  const data = await fetch('/api/v1/teams/14');
+  const data = await fetch.fetchStats('/api/v1/teams/14');
   // handle data
 }
 
@@ -35,7 +37,7 @@ async function handleData() {
  */
 
 // 1.
-fetch('/api/v1/teams/14/roster', {
+fetch.fetchStats('/api/v1/teams/14/roster', {
   'season': '20192020',
 }).then(res => {
   // handleData
@@ -43,24 +45,10 @@ fetch('/api/v1/teams/14/roster', {
 
 // 2.
 async function handleData() {
-  const { roster } = await fetch('/api/v1/teams/14/roster', {
+  const { roster } = await fetch.fetchStats('/api/v1/teams/14/roster', {
     'season': '20192020',
   });
   console.log(roster)
   // handle data
 }
 ```
-
-The fetch method for this project is very flexible and can be used in many ways, including but not limited to those above. I will be including it as a default function of the project that can be called something like `NHL()` or something where you can make your own queries because that is a very neccessary thing I had missing in the project previously.
-
-
-## helpers.js
-
-Just a couple of validation functions for the project as a whole. Most pertain to date inputs and such. Here are all the functions defined in this file.
-
-Name | Parameter(s) | Description
---- | --- | ---
-`isValidDateFormat()`  | `date` - a date in the form YYYY-MM-DD | Determines whether a given date is valid
-`isTimeframeValid()`  | `date1` - start date, `date2` - end date   |  Determines whether date1 comes before date2
-`formatDate()`  | `date` - a date in the form YYYY-MM-DD  | Converts a date from the format YYYY-MM-DD to MM/DD/YYYY
-`isValidSeasonFormat()`  | `season` - a string in the format YYYYYYYY (example: `20192020`) |  Determines whether a given season is valid.
