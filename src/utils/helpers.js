@@ -21,9 +21,9 @@ module.exports = {
   },
 
   /**
-   * Check if date1 (start) comes before date2 (3nd)
+   * Check if date1 (start) comes before date2 (end)
    *
-   * @param {string} date1 - start date1
+   * @param {string} date1 - start date
    * @param {string} date2 - end date
    * @return {boolean}
    */

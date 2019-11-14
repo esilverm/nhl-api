@@ -8,7 +8,7 @@ const BASE_URL = 'https://statsapi.web.nhl.com';
  *
  * @param {string} endpoint - desired endpoint to request data from site
  * @param {Object} params - parameters to search with
- * @return {Promise<Object>} data returned from our fetch
+ * @return {Promise} data returned from our fetch
  */
 async function fetchResource(endpoint, params = null) {
   const url = `${BASE_URL}${endpoint}`;
@@ -17,8 +17,7 @@ async function fetchResource(endpoint, params = null) {
     params,
   };
 
-  const res = await axios(config).then((res) => res.data)
-  return res;
+  return await axios(config).then((res) => res.data);
 }
 
 module.exports = fetchResource;
